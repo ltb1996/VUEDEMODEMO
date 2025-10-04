@@ -32,4 +32,5 @@ const number = ref(1022222222222222);
 const ok = ref(true);
 </script> -->
 
-<style scoped></style>
+<style scoped>
+</style>
