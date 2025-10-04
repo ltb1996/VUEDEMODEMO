@@ -8,14 +8,18 @@
     <!-- UnicornStudio 动态背景 -->
     <div class="aura-background-component">
       <div class="aura-inner">
-        <div ref="unicornContainer" data-us-project="BqS5vTHVEpn6NiF0g8iJ" class="unicorn-container"></div>
+        <div
+          ref="unicornContainer"
+          data-us-project="BqS5vTHVEpn6NiF0g8iJ"
+          class="unicorn-container"
+        ></div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from "vue";
 
 const unicornContainer = ref(null);
 
@@ -27,28 +31,28 @@ onMounted(() => {
         try {
           window.UnicornStudio.init();
           window.UnicornStudio.isInitialized = true;
-          console.log('UnicornStudio initialized successfully');
+          console.log("UnicornStudio initialized successfully");
         } catch (error) {
-          console.error('UnicornStudio init error:', error);
+          console.error("UnicornStudio init error:", error);
         }
       } else {
         // 如果已经初始化，尝试重新初始化当前容器
         try {
           window.UnicornStudio.init();
-          console.log('UnicornStudio re-initialized');
+          console.log("UnicornStudio re-initialized");
         } catch (error) {
-          console.error('UnicornStudio re-init error:', error);
+          console.error("UnicornStudio re-init error:", error);
         }
       }
     } else {
       // 如果还没加载，等待后重试
-      console.log('Waiting for UnicornStudio to load...');
+      console.log("Waiting for UnicornStudio to load...");
       setTimeout(initUnicorn, 100);
     }
   };
 
   // 延迟初始化，确保 DOM 完全渲染
-  setTimeout(initUnicorn, 200);
+  setTimeout(initUnicorn, 0);
 });
 </script>
 
@@ -76,10 +80,11 @@ onMounted(() => {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(to bottom,
+  /* background: linear-gradient(to bottom,
       rgba(88, 28, 135, 0.2) 0%,
       rgba(0, 0, 0, 1) 50%,
-      rgba(0, 0, 0, 1) 100%);
+      rgba(0, 0, 0, 1) 100%); */
+  background: rgba(0, 0, 0, 1);
 }
 
 .aura-background-component {

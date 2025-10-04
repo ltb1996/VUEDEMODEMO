@@ -1,5 +1,5 @@
 <template>
-    <div class="home-container">
+    <div class="home-container"  v-if="showContent">
         <h1>Home Page</h1>
         <MobanYufa />
         <Shuxingbangding />
@@ -16,6 +16,16 @@ export default {
     components: {
         MobanYufa,
         Shuxingbangding
+    },
+    data() {
+        return {
+            showContent: false
+        }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.showContent = true;
+        }, 2000);
     }
 }
 </script>
@@ -31,6 +41,7 @@ import MobanYufa from '../components/mobanyufa.vue'
     position: relative;
     z-index: 10;
 }
+
 h1 {
     z-index: 11;
     color: white;
