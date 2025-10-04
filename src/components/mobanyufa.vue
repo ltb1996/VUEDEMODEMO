@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mobanyufa">
     <h1>ewqeqeq</h1>
     <p>{{ msg }}</p>
     <div>{{ asda }}</div>
@@ -33,4 +33,7 @@ const ok = ref(true);
 </script> -->
 
 <style scoped>
+.mobanyufa {
+  color: white;
+}
 </style>

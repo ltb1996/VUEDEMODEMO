@@ -4,16 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Vue 3 + Vite demo project showcasing Vue template syntax and component development. Uses both Composition API and Options API patterns. Integrates Element Plus (desktop) and Vant (mobile) UI frameworks, though primarily demonstrates core Vue functionality.
+Vue 3 + Vite demo project showcasing Vue template syntax and component development. Uses **both Composition API and Options API patterns** side-by-side (with commented-out alternatives for learning purposes). Integrates Element Plus (desktop) and Vant (mobile) UI frameworks, and includes UnicornStudio for animated backgrounds.
 
 **Tech Stack:**
 - Vue 3 (Composition API & Options API)
 - Vite 7.x
-- Vue Router 4.x
 - Pinia (state management)
 - Element Plus (desktop UI)
 - Vant (mobile UI)
 - Axios (HTTP client)
+- UnicornStudio (background animations via CDN)
 - ESLint + Prettier
 
 ## Development Commands
@@ -35,43 +35,71 @@ npm run preview
 ## Project Architecture
 
 ### Application Entry Point
-- **main.js**: Creates Vue app instance, registers router, and mounts to `#app`
-- **App.vue**: Root component containing `<router-view>` for route rendering
-- **src/router/index.js**: Vue Router configuration with web history mode
+- **index.html**: Loads UnicornStudio CDN script globally for background animations
+- **main.js**: Creates Vue app instance and mounts to `#app` (NO router registered here currently)
+- **App.vue**: Root component that imports BackgroundEffect and Home components directly (no router-view)
+
+### Component Hierarchy
+```
+App.vue (root)
+├── BackgroundEffect.vue (fixed background layer)
+└── Home.vue (main content)
+    └── MobanYufa.vue (template syntax demo)
+```
 
 ### File Structure
 ```
 src/
-├── components/        # Reusable Vue components
-│   ├── mobanyufa.vue           # Template syntax demo (Options API)
-│   ├── shuxingbangding.vue     # Attribute binding examples
-│   ├── tiaojianxuanran.vue     # Conditional rendering
-│   ├── libiaoxuanran.vue       # List rendering
-│   └── keyguanlizhuangtai.vue  # State management patterns
-├── views/             # Route-level components
-│   └── home.vue       # Home page (imports MobanYufa component)
+├── components/
+│   ├── BackgroundEffect.vue    # UnicornStudio animated background (Composition API)
+│   ├── mobanyufa.vue            # Template syntax demo (Options API + commented Composition API)
+│   ├── shuxingbangding.vue      # Attribute binding examples (empty)
+│   ├── tiaojianxuanran.vue      # Conditional rendering (empty)
+│   ├── libiaoxuanran.vue        # List rendering (empty)
+│   └── keyguanlizhuangtai.vue   # State management patterns (empty)
+├── views/
+│   └── home.vue                 # Home page (Options API + commented Composition API)
 ├── router/
-│   └── index.js       # Route definitions
-├── assets/            # Static assets (images, etc.)
-└── style.css          # Global styles
+│   └── index.js                 # Router config exists but NOT currently used in main.js
+└── style.css                    # Global styles
 ```
 
+### Dual API Pattern Convention
+
+**IMPORTANT**: Components contain both Options API (active) and Composition API (commented) for educational purposes:
+
+```vue
+<!-- Options API (active) -->
+<script>
+export default {
+  components: { MobanYufa }
+}
+</script>
+
+<!-- Composition API (commented reference) -->
+<!-- <script setup>
+import MobanYufa from '../components/mobanyufa.vue'
+</script> -->
+```
+
+When modifying components, **preserve both versions** unless explicitly asked to switch.
+
 ### Component Patterns
-- **Options API**: Used in existing components (mobanyufa.vue demonstrates this pattern)
-- **Composition API**: Supported via `<script setup>` syntax
-- **Scoped CSS**: Use scoped styles for component isolation
-- **Component Imports**: Use `@/` alias for src directory (e.g., `@/components/...`)
+- **Options API**: Currently active in App.vue, home.vue, mobanyufa.vue
+- **Composition API**: Used in BackgroundEffect.vue; commented alternatives in other files
+- **Component Imports**: Use relative paths (e.g., `../components/mobanyufa.vue`); `@/` alias NOT configured in vite.config.js
+- **Background Integration**: BackgroundEffect.vue uses `onMounted` to initialize UnicornStudio after DOM loads
 
 ## Key Conventions
 
-1. **Router Configuration**: Routes defined in `src/router/index.js` using createWebHistory
-2. **Component Registration**: Components imported and registered in parent components or views
-3. **UI Framework Selection**: Project includes both Element Plus and Vant; choose appropriate framework based on target platform (desktop vs mobile)
-4. **Code Style**: ESLint + Prettier configured (though config files not present, dependencies installed)
+1. **No Active Router**: Router config exists in `src/router/index.js` but main.js does NOT call `.use(router)`; App.vue directly imports components instead of using `<router-view>`
+2. **UnicornStudio Integration**: Loaded via CDN in index.html; initialized in BackgroundEffect.vue's onMounted hook with project ID `BqS5vTHVEpn6NiF0g8iJ`
+3. **Educational Code Comments**: Preserve commented-out Composition API examples in files for learning reference
+4. **Empty Component Files**: Several components (shuxingbangding.vue, tiaojianxuanran.vue, etc.) are placeholders for future demos
 
 ## Architecture Notes
 
-- Router is registered globally in main.js via `.use(router)`
-- App.vue serves as shell with router-view for navigation
-- Home view acts as demo page importing example components
-- Components demonstrate specific Vue concepts (template syntax, binding, rendering, state)
+- **No router currently active** despite router files existing; components are directly imported
+- BackgroundEffect uses fixed positioning (`position: fixed; z-index: 0`) to layer behind content
+- UnicornStudio script loads asynchronously; component waits for `window.UnicornStudio` before init
+- App.vue has dark theme styling (`background-color: #000`) to complement animated background

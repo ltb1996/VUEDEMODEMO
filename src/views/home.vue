@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home-container">
         <h1>Home Page</h1>
         <MobanYufa />
     </div>
@@ -23,4 +23,13 @@ export default {
 import MobanYufa from '../components/mobanyufa.vue'
 </script> -->
 
-<style scoped></style>
+<style scoped>
+.home-container {
+    position: relative;
+    z-index: 10;
+}
+h1 {
+    z-index: 11;
+    color: white;
+}
+</style>
