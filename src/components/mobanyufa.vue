@@ -5,18 +5,24 @@
     <div>{{ asda }}</div>
     <p>{{ number + 1 }}</p>
     <p>{{ ok ? "ok" : "not ok" }}</p>
+    <!-- <p>{{ var a = 10 }}</p> -->
+    <p>{{ msg.split('').reverse().join("") }}</p>
+    <p>{{ rawHtml }}</p>
+    <p v-html="rawHtml"></p>
   </div>
 </template>
 
 <!-- 	选项式API -->
 <script>
 export default {
+  name: 'mobanyufa',
   data() {
     return {
-      msg: "adsadda",
+      msg: "abcde",
       asda: "asdadsad",
       number: 10,
       ok: true,
+      rawHtml: "<a href='https://www.baidu.com'>百度百度</a>"
     }
   }
 }

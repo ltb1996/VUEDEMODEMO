@@ -2,17 +2,20 @@
     <div class="home-container">
         <h1>Home Page</h1>
         <MobanYufa />
+        <Shuxingbangding />
     </div>
 </template>
 
 <!-- 选项式api -->
 <script>
 import MobanYufa from '../components/mobanyufa.vue'
+import Shuxingbangding from '../components/shuxingbangding.vue';
 
 export default {
     name: 'Home',
     components: {
-        MobanYufa
+        MobanYufa,
+        Shuxingbangding
     }
 }
 </script>
