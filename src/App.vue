@@ -15,4 +15,10 @@ export default {
 }
 </script>
 
+
+<!-- 组合式 API（改法）： -->
+<!-- <script setup>
+import Home from './views/home.vue'
+</script> -->
+
 <style scoped></style>

@@ -22,5 +22,14 @@ export default {
 }
 </script>
 
-<style scoped>
-</style>
+<!-- 组合式api -->
+<!-- <script setup>
+import { ref } from 'vue';
+
+const msg = ref("adsadda");
+const asda = ref("asdadsad");
+const number = ref(1022222222222222);
+const ok = ref(true);
+</script> -->
+
+<style scoped></style>
