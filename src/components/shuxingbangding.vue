@@ -4,6 +4,7 @@
         <p :id="dynamicId" :class="dynamicClass" :title="titleaaa" :aaa="aaa">测试测试</p>
         <button :disabled="isButtonDisabled">button</button>
         <div v-bind="objectOfAttrs">啊是大多数</div>
+        <hr>
     </div>
 </template>
 

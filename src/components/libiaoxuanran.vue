@@ -8,6 +8,7 @@
             <img :src="value.img" :alt="value.name"></img>
         </div>
         <div v-for="(value, key, index) in myObject">{{ value }} --- {{ key }} --- {{ index }}</div>
+        <hr>
 
     </div>
 </template>

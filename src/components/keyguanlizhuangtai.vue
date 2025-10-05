@@ -9,6 +9,7 @@
             <p>{{ value.name }}</p>
             <img :src="value.img" :alt="value.name"></img>
         </div>
+        <hr>
 
     </div>
 </template>

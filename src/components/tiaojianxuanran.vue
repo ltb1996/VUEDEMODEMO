@@ -8,6 +8,7 @@
         <div v-else-if="type === 'C'">C</div>
         <div v-else>NOT ABC</div>
         <div v-show="flag1">看见看见</div>
+        <hr>
     </div>
 </template>
 

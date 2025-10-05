@@ -10,6 +10,7 @@
     <p>{{ msg.split('').reverse().join("") }}</p>
     <p>{{ rawHtml }}</p>
     <p v-html="rawHtml"></p>
+    <hr>
   </div>
 </template>
 
