@@ -1,8 +1,11 @@
 <template>
     <div class="home-container"  v-if="showContent">
-        <h1>Home Page</h1>
+        <h1>Home Page vue3官网教学</h1>
         <MobanYufa />
         <Shuxingbangding />
+        <Tiaojianxuanran />
+        <Libiaoxuanran />
+        <Keyguanlizhuangtai />
     </div>
 </template>
 
@@ -10,12 +13,19 @@
 <script>
 import MobanYufa from '../components/mobanyufa.vue'
 import Shuxingbangding from '../components/shuxingbangding.vue';
+import Tiaojianxuanran from '../components/tiaojianxuanran.vue';
+import Libiaoxuanran from '../components/libiaoxuanran.vue';
+import Keyguanlizhuangtai from '../components/keyguanlizhuangtai.vue';
+
 
 export default {
     name: 'Home',
     components: {
         MobanYufa,
-        Shuxingbangding
+        Shuxingbangding,
+        Tiaojianxuanran,
+        Libiaoxuanran,
+        Keyguanlizhuangtai
     },
     data() {
         return {

@@ -1,5 +1,6 @@
 <template>
   <div class="mobanyufa">
+    <H3>模板语法</H3>
     <h1>ewqeqeq</h1>
     <p>{{ msg }}</p>
     <div>{{ asda }}</div>
@@ -40,6 +41,6 @@ const ok = ref(true);
 
 <style scoped>
 .mobanyufa {
-  color: white;
+  color: green;
 }
 </style>

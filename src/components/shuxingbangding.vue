@@ -1,5 +1,6 @@
 <template>
     <div class="shuxingbangding">
+        <H3>属性绑定</H3>
         <p :id="dynamicId" :class="dynamicClass" :title="titleaaa" :aaa="aaa">测试测试</p>
         <button :disabled="isButtonDisabled">button</button>
         <div v-bind="objectOfAttrs">啊是大多数</div>
