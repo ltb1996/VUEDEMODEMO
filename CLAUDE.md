@@ -43,25 +43,35 @@ npm run preview
 ```
 App.vue (root)
 ├── BackgroundEffect.vue (fixed background layer)
-└── Home.vue (main content)
-    └── MobanYufa.vue (template syntax demo)
+└── Home.vue (main content, delayed 2s display)
+    ├── MobanYufa.vue (template syntax demo)
+    ├── Shuxingbangding.vue (attribute binding examples)
+    ├── Tiaojianxuanran.vue (conditional rendering)
+    ├── Libiaoxuanran.vue (list rendering)
+    ├── Keyguanlizhuangtai.vue (state management)
+    ├── Shijianchuli.vue (event handling)
+    ├── Shijianchuancan.vue (event parameter passing)
+    └── Eventdemo.vue (event examples)
 ```
 
 ### File Structure
 ```
 src/
 ├── components/
-│   ├── BackgroundEffect.vue    # UnicornStudio animated background (Composition API)
-│   ├── mobanyufa.vue            # Template syntax demo (Options API + commented Composition API)
-│   ├── shuxingbangding.vue      # Attribute binding examples (empty)
-│   ├── tiaojianxuanran.vue      # Conditional rendering (empty)
-│   ├── libiaoxuanran.vue        # List rendering (empty)
-│   └── keyguanlizhuangtai.vue   # State management patterns (empty)
+│   ├── BackgroundEffect.vue       # UnicornStudio animated background (Composition API)
+│   ├── mobanyufa.vue              # Template syntax demo (Options API + commented Composition API)
+│   ├── shuxingbangding.vue        # Attribute binding examples
+│   ├── tiaojianxuanran.vue        # Conditional rendering
+│   ├── libiaoxuanran.vue          # List rendering
+│   ├── keyguanlizhuangtai.vue     # State management patterns
+│   ├── shijianchuli.vue           # Event handling
+│   ├── shijianchuancan.vue        # Event parameter passing
+│   └── eventdemo.vue              # Event examples
 ├── views/
-│   └── home.vue                 # Home page (Options API + commented Composition API)
+│   └── home.vue                   # Home page with 2s delayed display (Options API + commented Composition API)
 ├── router/
-│   └── index.js                 # Router config exists but NOT currently used in main.js
-└── style.css                    # Global styles
+│   └── index.js                   # Empty router file (not configured or used)
+└── style.css                      # Global styles
 ```
 
 ### Dual API Pattern Convention
@@ -92,14 +102,15 @@ When modifying components, **preserve both versions** unless explicitly asked to
 
 ## Key Conventions
 
-1. **No Active Router**: Router config exists in `src/router/index.js` but main.js does NOT call `.use(router)`; App.vue directly imports components instead of using `<router-view>`
-2. **UnicornStudio Integration**: Loaded via CDN in index.html; initialized in BackgroundEffect.vue's onMounted hook with project ID `BqS5vTHVEpn6NiF0g8iJ`
-3. **Educational Code Comments**: Preserve commented-out Composition API examples in files for learning reference
-4. **Empty Component Files**: Several components (shuxingbangding.vue, tiaojianxuanran.vue, etc.) are placeholders for future demos
+1. **No Active Router**: `src/router/index.js` is essentially empty (1 line); main.js does NOT call `.use(router)`; App.vue directly imports components instead of using `<router-view>`
+2. **Delayed Content Display**: home.vue uses a 2-second `setTimeout` in `mounted()` hook before showing content (`showContent` state) to allow background animation to load
+3. **UnicornStudio Integration**: Loaded via CDN in index.html; initialized in BackgroundEffect.vue's onMounted hook with project ID `BqS5vTHVEpn6NiF0g8iJ`
+4. **Educational Code Comments**: Preserve commented-out Composition API examples in files for learning reference; this is a teaching project demonstrating both API styles
 
 ## Architecture Notes
 
-- **No router currently active** despite router files existing; components are directly imported
-- BackgroundEffect uses fixed positioning (`position: fixed; z-index: 0`) to layer behind content
-- UnicornStudio script loads asynchronously; component waits for `window.UnicornStudio` before init
-- App.vue has dark theme styling (`background-color: #000`) to complement animated background
+- **No router currently active**: Router file is empty; components are directly imported in App.vue
+- **Z-index layering**: BackgroundEffect (z-index: 0-1) → Home container (z-index: 10) → Home heading (z-index: 11)
+- **Background rendering**: BackgroundEffect uses fixed positioning (`position: fixed`) with CSS gradient overlay and UnicornStudio animation layer
+- **Async initialization**: UnicornStudio script loads via CDN; BackgroundEffect.vue polls for `window.UnicornStudio` availability before init
+- **Dark theme**: App.vue has dark background (`background-color: #000`) to complement animated background; home.vue content appears white on dark

@@ -1,5 +1,5 @@
 <template>
-    <div class="home-container"  v-if="showContent">
+    <div class="home-container" v-if="showContent">
         <h1>Home Page vue3官网教学</h1>
         <hr>
         <MobanYufa />
@@ -10,6 +10,7 @@
         <Shijianchuli />
         <Shijianchuancan />
         <Eventdemo />
+        <Shijianxiushifu></Shijianxiushifu>
     </div>
 </template>
 
@@ -23,6 +24,7 @@ import Keyguanlizhuangtai from '../components/keyguanlizhuangtai.vue';
 import Shijianchuli from '../components/shijianchuli.vue';
 import Shijianchuancan from '../components/shijianchuancan.vue';
 import Eventdemo from '../components/eventdemo.vue';
+import Shijianxiushifu from '../components/shijianxiushifu.vue';
 
 
 export default {
@@ -35,7 +37,8 @@ export default {
         Keyguanlizhuangtai,
         Shijianchuli,
         Shijianchuancan,
-        Eventdemo
+        Eventdemo,
+        Shijianxiushifu
     },
     data() {
         return {
