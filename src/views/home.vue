@@ -12,6 +12,7 @@
         <Eventdemo />
         <Shijianxiushifu></Shijianxiushifu>
         <Shuzubianhuazhence />
+        <Jisuanshuxing />
     </div>
 </template>
 
@@ -27,6 +28,7 @@ import Shijianchuancan from '../components/shijianchuancan.vue';
 import Eventdemo from '../components/eventdemo.vue';
 import Shijianxiushifu from '../components/shijianxiushifu.vue';
 import Shuzubianhuazhence from '../components/shuzubianhuazhence.vue';
+import Jisuanshuxing from '../components/jisuanshuxing.vue';
 
 
 export default {
@@ -41,7 +43,8 @@ export default {
         Shijianchuancan,
         Eventdemo,
         Shijianxiushifu,
-        Shuzubianhuazhence
+        Shuzubianhuazhence,
+        Jisuanshuxing
     },
     data() {
         return {
