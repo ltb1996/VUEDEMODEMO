@@ -11,7 +11,7 @@
 <script >
 
 export default {
-    name: "shuxingbangding",
+    name: "2shuxingbangding",
     data() {
         return {
             dynamicId: "id1",

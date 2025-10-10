@@ -16,7 +16,7 @@
 
 <script >
 export default {
-    name: "shijianxiushifu",
+    name: "9shijianxiushifu",
     data() {
         return {}
     },

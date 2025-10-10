@@ -13,7 +13,7 @@
 
 <script>
 export default {
-    name: "shijianchuli",
+    name: "6shijianchuli",
     data() {
         return {
             count: 0,

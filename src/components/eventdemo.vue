@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: "eventDemo",
+    name: "8eventDemo",
     data() {
         return {
             names: ['张三', '李四', '王五']

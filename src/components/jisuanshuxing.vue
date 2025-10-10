@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    name: "jisuanshuxing",
+    name: "11jisuanshuxing",
     data() {
         return {
             content: {
