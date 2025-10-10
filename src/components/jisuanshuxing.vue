@@ -7,6 +7,7 @@
         <div>{{ isContentTextEmpty }}</div>
         <!-- 函数或方法需要加括号，直接写名字即可 -->
         <div>{{ isContentTextEmptys() }}</div>
+        <hr>
     </div>
 </template>
 
