@@ -15,6 +15,7 @@
         <!-- 数组和对象一起使用嵌套过程中，只能是数组嵌套对象，对象嵌套数组无效 -->
 
         <p :class="[isActive ? 'active' : '', { 'text-danger': hasError }]">class样式绑定5</p>
+        <hr>
     </div>
 </template>
 

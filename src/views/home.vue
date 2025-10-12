@@ -14,6 +14,7 @@
         <Shuzubianhuazhence />
         <Jisuanshuxing />
         <Classbangding />
+        <Stylebangding />
     </div>
 </template>
 
@@ -31,6 +32,7 @@ import Shijianxiushifu from '../components/shijianxiushifu.vue';
 import Shuzubianhuazhence from '../components/shuzubianhuazhence.vue';
 import Jisuanshuxing from '../components/jisuanshuxing.vue';
 import Classbangding from '../components/classbangding.vue';
+import Stylebangding from '../components/stylebangding.vue';
 
 
 export default {
@@ -47,7 +49,8 @@ export default {
         Shijianxiushifu,
         Shuzubianhuazhence,
         Jisuanshuxing,
-        Classbangding
+        Classbangding,
+        Stylebangding
     },
     data() {
         return {
