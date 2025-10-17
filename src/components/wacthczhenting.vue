@@ -4,6 +4,7 @@
         <!-- 只能侦听data中的数据变化 -->
         <p>{{ message }}</p>
         <button @click="update">修改数据</button>
+        <hr>
     </div>
 </template>
 

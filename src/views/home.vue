@@ -16,6 +16,7 @@
         <Classbangding />
         <Stylebangding />
         <Wacthczhenting />
+        <Biaodanshujubangding />
     </div>
 </template>
 
@@ -35,6 +36,7 @@ import Jisuanshuxing from '../components/jisuanshuxing.vue';
 import Classbangding from '../components/classbangding.vue';
 import Stylebangding from '../components/stylebangding.vue';
 import Wacthczhenting from '../components/wacthczhenting.vue';
+import Biaodanshujubangding from '../components/biaodanshujubangding.vue';
 
 
 export default {
@@ -53,7 +55,8 @@ export default {
         Jisuanshuxing,
         Classbangding,
         Stylebangding,
-        Wacthczhenting
+        Wacthczhenting,
+        Biaodanshujubangding
     },
     data() {
         return {
