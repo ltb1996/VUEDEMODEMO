@@ -11,7 +11,7 @@
             <label for="checkbox">{{ checked }}</label>
             
         </form>
-
+        <hr>
     </div>
 </template>
 

@@ -1,3 +1,11 @@
+<!--
+ * @Author: ltb1996 610030835@qq.com
+ * @Date: 2025-10-04 19:55:28
+ * @LastEditors: ltb1996 610030835@qq.com
+ * @LastEditTime: 2025-11-02 00:04:20
+ * @FilePath: \vuedemodemo\src\views\home.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
     <div class="home-container" v-if="showContent">
         <h1>Home Page vue3官网教学</h1>
@@ -17,6 +25,7 @@
         <Stylebangding />
         <Wacthczhenting />
         <Biaodanshujubangding />
+        <Mobanyinyong />
     </div>
 </template>
 
@@ -37,6 +46,7 @@ import Classbangding from '../components/classbangding.vue';
 import Stylebangding from '../components/stylebangding.vue';
 import Wacthczhenting from '../components/wacthczhenting.vue';
 import Biaodanshujubangding from '../components/biaodanshujubangding.vue';
+import Mobanyinyong from '../components/mobanyinyong.vue';
 
 
 export default {
@@ -56,7 +66,8 @@ export default {
         Classbangding,
         Stylebangding,
         Wacthczhenting,
-        Biaodanshujubangding
+        Biaodanshujubangding,
+        Mobanyinyong
     },
     data() {
         return {
